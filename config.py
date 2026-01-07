@@ -2,6 +2,7 @@
 配置文件
 从环境变量读取文件路径
 支持从.env文件加载（如果使用python-dotenv）
+注意：Streamlit Secrets会在streamlit_app.py中读取并设置为环境变量
 """
 import os
 

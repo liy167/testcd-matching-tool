@@ -4,10 +4,24 @@
 """
 
 import streamlit as st
-from lab_test_matcher import LabTestMatcher
 import json
 import re
 import os
+
+# 优先从Streamlit Secrets读取配置（如果在Streamlit Cloud上运行）
+try:
+    if hasattr(st, 'secrets') and 'paths' in st.secrets:
+        # 从Streamlit Secrets读取并设置为环境变量
+        paths = st.secrets.get('paths', {})
+        if 'EXCEL_PATH' in paths:
+            os.environ['EXCEL_PATH'] = paths['EXCEL_PATH']
+        if 'MAPPING_FILE' in paths:
+            os.environ['MAPPING_FILE'] = paths['MAPPING_FILE']
+        if 'CACHE_DIR' in paths:
+            os.environ['CACHE_DIR'] = paths['CACHE_DIR']
+except (AttributeError, TypeError, KeyError):
+    # 如果Secrets未配置，继续尝试其他方式
+    pass
 
 # 尝试从.env文件加载环境变量（如果安装了python-dotenv）
 try:
@@ -16,6 +30,9 @@ try:
 except ImportError:
     # 如果没有安装python-dotenv，跳过
     pass
+
+# 现在导入LabTestMatcher（此时环境变量应该已经设置好了）
+from lab_test_matcher import LabTestMatcher
 
 # 翻译功能（使用deep-translator，如果不可用则使用简单回退）
 try:
@@ -134,7 +151,7 @@ query = st.text_input(
 # 搜索按钮
 col1, col2 = st.columns([1, 10])
 with col1:
-    search_button = st.button("搜索", type="primary", use_container_width=True)
+    search_button = st.button("搜索", type="primary", width='stretch')
 
 # 执行搜索
 if search_button or query:
@@ -195,7 +212,7 @@ if search_button or query:
                         })
                 
                 df = pd.DataFrame(df_data)
-                st.dataframe(df, use_container_width=True, hide_index=True)
+                st.dataframe(df, width='stretch', hide_index=True)
                 
                 # 显示详细信息（可展开）
                 with st.expander("📋 查看JSON格式结果"):
