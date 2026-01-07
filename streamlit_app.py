@@ -9,16 +9,31 @@ import re
 import os
 
 # 优先从Streamlit Secrets读取配置（如果在Streamlit Cloud上运行）
+# 注意：在本地环境中，secrets文件不存在是正常的，需要捕获异常
 try:
-    if hasattr(st, 'secrets') and 'paths' in st.secrets:
-        # 从Streamlit Secrets读取并设置为环境变量
-        paths = st.secrets.get('paths', {})
-        if 'EXCEL_PATH' in paths:
-            os.environ['EXCEL_PATH'] = paths['EXCEL_PATH']
-        if 'MAPPING_FILE' in paths:
-            os.environ['MAPPING_FILE'] = paths['MAPPING_FILE']
-        if 'CACHE_DIR' in paths:
-            os.environ['CACHE_DIR'] = paths['CACHE_DIR']
+    # 导入Streamlit异常类
+    from streamlit.errors import StreamlitSecretNotFoundError
+except ImportError:
+    # 如果导入失败，使用通用异常
+    StreamlitSecretNotFoundError = Exception
+
+try:
+    if hasattr(st, 'secrets'):
+        # 使用get方法安全地访问，避免在本地环境抛出StreamlitSecretNotFoundError
+        try:
+            paths = st.secrets.get('paths', {})
+            if paths and isinstance(paths, dict):
+                # 从Streamlit Secrets读取并设置为环境变量
+                if 'EXCEL_PATH' in paths:
+                    os.environ['EXCEL_PATH'] = str(paths['EXCEL_PATH'])
+                if 'MAPPING_FILE' in paths:
+                    os.environ['MAPPING_FILE'] = str(paths['MAPPING_FILE'])
+                if 'CACHE_DIR' in paths:
+                    os.environ['CACHE_DIR'] = str(paths['CACHE_DIR'])
+        except (StreamlitSecretNotFoundError, Exception):
+            # 如果Secrets未配置（本地环境），继续尝试其他方式
+            # 在本地环境中，secrets文件不存在是正常的，不需要处理
+            pass
 except (AttributeError, TypeError, KeyError):
     # 如果Secrets未配置，继续尝试其他方式
     pass
