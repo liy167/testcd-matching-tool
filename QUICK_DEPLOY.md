@@ -2,6 +2,41 @@
 
 ## 最简单方案：使用Streamlit Cloud（推荐）
 
+### 前置步骤：安装Git
+
+**如果遇到 "git : 无法将'git'项识别为..." 错误，说明Git未安装。**
+
+1. **下载Git**
+   - 访问：https://git-scm.com/download/win
+   - 点击下载按钮（会自动下载适合Windows的版本）
+
+2. **安装Git**
+   - 双击下载的安装程序（通常是 `Git-x.x.x-64-bit.exe`）
+   - 安装过程中：
+     - 保持默认选项即可
+     - **重要**：在"Adjusting your PATH environment"步骤，选择 **"Git from the command line and also from 3rd-party software"**（推荐）
+     - 其他选项保持默认，点击"Next"直到完成
+
+3. **验证安装**
+   - **关闭当前的PowerShell窗口**（重要！）
+   - 重新打开PowerShell
+   - 输入以下命令验证：
+     ```powershell
+     git --version
+     ```
+   - 如果显示版本号（如 `git version 2.42.0`），说明安装成功
+
+4. **配置Git（首次使用）**
+   ```powershell
+   git config --global user.name "您的姓名"
+   git config --global user.email "您的邮箱"
+   ```
+   例如：
+   ```powershell
+   git config --global user.name "Zhang San"
+   git config --global user.email "zhangsan@example.com"
+   ```
+
 ### 第一步：准备GitHub仓库
 
 1. **注册/登录GitHub账号**
@@ -18,25 +53,52 @@
 
 3. **在本地项目目录执行以下命令**
 
+**在哪里输入命令？**
+- 打开 **PowerShell** 或 **命令提示符（CMD）**
+- 使用 `cd` 命令切换到项目目录：
+  ```powershell
+  cd C:\Users\liy167\YuLI\testcd_map
+  ```
+- 然后依次执行以下命令：
+
 ```bash
-# 初始化Git（如果还没有）
+# 命令1：初始化Git（如果还没有）
+# 作用：在当前目录创建一个Git仓库
 git init
 
-# 添加所有文件
+# 命令2：添加所有文件到Git暂存区
+# 作用：告诉Git要跟踪哪些文件
 git add .
 
-# 提交
+# 命令3：提交文件到本地Git仓库
+# 作用：保存当前的文件状态，创建一个"快照"
 git commit -m "Initial commit: Streamlit app"
 
-# 连接到GitHub仓库（替换your-username为您的GitHub用户名）
+# 命令4：连接到GitHub仓库
+# 作用：将本地仓库与GitHub上的远程仓库关联
+# ⚠️ 重要：将 your-username 替换为您的GitHub用户名
 git remote add origin https://github.com/your-username/testcd-matching-tool.git
 
-# 推送到GitHub
+# 命令5：将分支重命名为main（GitHub默认使用main分支）
 git branch -M main
+
+# 命令6：推送代码到GitHub
+# 作用：将本地代码上传到GitHub
 git push -u origin main
 ```
 
-**注意**：如果提示输入用户名和密码，请使用GitHub Personal Access Token作为密码。
+**详细说明**：
+- **`git init`**：在当前文件夹初始化Git仓库（只需要执行一次）
+- **`git add .`**：添加当前目录下的所有文件（`.` 表示当前目录）
+- **`git commit`**：提交更改，`-m` 后面是提交说明
+- **`git remote add origin`**：添加远程仓库地址（只需要执行一次）
+- **`git branch -M main`**：将当前分支重命名为 `main`
+- **`git push`**：将代码推送到GitHub
+
+**注意**：
+- 如果提示输入用户名和密码，请使用GitHub Personal Access Token作为密码
+- 如果还没有安装Git，请先下载安装：https://git-scm.com/download/win
+- 如果提示"fatal: not a git repository"，说明需要先执行 `git init`
 
 ### 第二步：部署到Streamlit Cloud
 
