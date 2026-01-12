@@ -221,9 +221,9 @@ if search_button or query:
                         df_data.append({
                             "排名": i,
                             "相似度": f"{result['similarity']:.4f}",
-                            "CDISC Submission Value (E)": result.get('e_value', ''),
-                            "CDISC Synonym(s) (F)": f_value_display,
-                            "NCI Preferred Term (H)": h_value_with_translation
+                            "CDISC Submission Value": result.get('e_value', ''),
+                            "CDISC Synonym(s)": f_value_display,
+                            "NCI Preferred Term": h_value_with_translation
                         })
                 
                 df = pd.DataFrame(df_data)

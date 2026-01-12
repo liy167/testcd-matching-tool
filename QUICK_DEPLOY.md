@@ -113,27 +113,51 @@ git push -u origin main
      - **Branch**: `main`
      - **Main file path**: `streamlit_app.py`
      - **App URL**: 可以自定义（如：`testcd-matching`）
+   - 点击"Deploy!"按钮（先部署，稍后再配置环境变量）
 
-3. **配置环境变量（重要）**
+3. **配置环境变量（重要！必须配置）**
 
-   由于应用使用了Windows路径，需要在Streamlit Cloud中设置环境变量：
+   ⚠️ **重要**：应用需要以下环境变量才能正常运行！
 
-   点击"Advanced settings" → "Secrets"，添加以下内容：
+   **步骤**：
+   
+   1. 部署完成后，在应用页面点击右上角的 **"Manage app"**（或"⚙️"图标）
+   
+   2. 点击 **"Settings"** 标签
+   
+   3. 向下滚动找到 **"Secrets"** 部分
+   
+   4. 在文本框中输入以下内容（使用TOML格式）：
+   
+      ```toml
+      [paths]
+      EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
+      MAPPING_FILE = "Z:/projects/utility/macros/09_metadata/TEST_TESTCD_mapping.xlsx"
+      CACHE_DIR = "Z:/projects/utility/metadata/testcd_embedding"
+      ```
+   
+      **注意**：
+      - 路径使用正斜杠 `/`（不是反斜杠 `\`）
+      - 如果您的文件路径不同，请修改为实际路径
+      - 如果文件在GitHub仓库中，使用相对路径，例如：
+        ```toml
+        [paths]
+        EXCEL_PATH = "data/SDTM Terminology.xls"
+        MAPPING_FILE = "data/TEST_TESTCD_mapping.xlsx"
+        CACHE_DIR = "cache/testcd_embedding"
+        ```
+   
+   5. 点击 **"Save"** 保存
+   
+   6. 应用会自动重新部署（通常需要30秒到1分钟）
 
-   ```toml
-   [paths]
-   EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
-   MAPPING_FILE = "Z:/projects/utility/macros/09_metadata/TEST_TESTCD_mapping.xlsx"
-   CACHE_DIR = "Z:/projects/utility/metadata/testcd_embedding"
-   ```
-
-   **或者**，如果数据文件需要上传到仓库：
-   - 将数据文件添加到GitHub仓库
-   - 修改`config.py`使用相对路径
-
-4. **部署**
-   - 点击"Deploy!"按钮
-   - 等待1-2分钟，应用会自动部署
+4. **验证部署**
+   - 等待部署完成后，刷新页面
+   - 如果看到"匹配器初始化成功！"，说明配置正确
+   - 如果仍然报错，检查：
+     - Secrets中的路径是否正确
+     - 文件是否存在于指定路径
+     - 路径格式是否正确（使用正斜杠）
 
 ### 第三步：访问应用
 
