@@ -118,7 +118,7 @@ def translate_text(text: str) -> str:
 
 # 页面配置
 st.set_page_config(
-    page_title="检查项目匹配器",
+    page_title="检查项目TESTCD - TEST 查询工具",
     page_icon="🔬",
     layout="wide",
     initial_sidebar_state="expanded"
