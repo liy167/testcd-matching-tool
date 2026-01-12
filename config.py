@@ -15,13 +15,13 @@ except ImportError:
     pass
 
 # Excel文件路径（从环境变量读取，如果没有则使用默认值）
-EXCEL_PATH = os.getenv('EXCEL_PATH', r"Z:\projects\utility\metadata\SDTM Terminology.xls")
+EXCEL_PATH = os.getenv('EXCEL_PATH', r"C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls")
 
 # 映射文件路径（从环境变量读取，如果没有则使用默认值）
-MAPPING_FILE = os.getenv('MAPPING_FILE', r"Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx")
+MAPPING_FILE = os.getenv('MAPPING_FILE', r"C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx")
 
 # 缓存目录路径（从环境变量读取，如果没有则使用默认值）
-CACHE_DIR = os.getenv('CACHE_DIR', r"Z:\projects\utility\metadata\testcd_embedding")
+CACHE_DIR = os.getenv('CACHE_DIR', r"C:\Users\liy167\YuLI\testcd_map\testcd_embedding")
 
 # 检查必需的环境变量
 def check_required_env_vars():
