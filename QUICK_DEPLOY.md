@@ -131,21 +131,16 @@ git push -u origin main
    
       ```toml
       [paths]
-      EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
-      MAPPING_FILE = "C:/Users/liy167/YuLI/testcd_map/TEST_TESTCD_mapping.xlsx"
-      CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
+      EXCEL_PATH = "data/SDTM Terminology.xls"
+      MAPPING_FILE = "data/TEST_TESTCD_mapping.xlsx"
+      CACHE_DIR = "cache/testcd_embedding"
       ```
    
       **注意**：
       - 路径使用正斜杠 `/`（不是反斜杠 `\`）
-      - 如果您的文件路径不同，请修改为实际路径
-      - 如果文件在GitHub仓库中，使用相对路径，例如：
-        ```toml
-        [paths]
-        EXCEL_PATH = "data/SDTM Terminology.xls"
-        MAPPING_FILE = "data/TEST_TESTCD_mapping.xlsx"
-        CACHE_DIR = "cache/testcd_embedding"
-        ```
+      - 文件已上传到 GitHub 仓库的 `data/` 文件夹，使用相对路径
+      - 路径相对于项目根目录
+      - `cache/` 目录会自动创建（如果不存在）
    
    5. 点击 **"Save"** 保存
    
