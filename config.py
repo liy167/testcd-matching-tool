@@ -15,13 +15,16 @@ except ImportError:
     pass
 
 # Excel文件路径（从环境变量读取，如果没有则使用默认值）
-EXCEL_PATH = os.getenv('EXCEL_PATH', r"C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls")
+# 默认使用相对路径，适用于 Streamlit Cloud 部署（文件在 data/ 文件夹中）
+EXCEL_PATH = os.getenv('EXCEL_PATH', "data/SDTM Terminology.xls")
 
 # 映射文件路径（从环境变量读取，如果没有则使用默认值）
-MAPPING_FILE = os.getenv('MAPPING_FILE', r"C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx")
+# 默认使用相对路径，适用于 Streamlit Cloud 部署（文件在 data/ 文件夹中）
+MAPPING_FILE = os.getenv('MAPPING_FILE', "data/TEST_TESTCD_mapping.xlsx")
 
 # 缓存目录路径（从环境变量读取，如果没有则使用默认值）
-CACHE_DIR = os.getenv('CACHE_DIR', r"C:\Users\liy167\YuLI\testcd_map\testcd_embedding")
+# 默认使用相对路径，适用于 Streamlit Cloud 部署
+CACHE_DIR = os.getenv('CACHE_DIR', "cache/testcd_embedding")
 
 # 检查必需的环境变量
 def check_required_env_vars():
@@ -43,9 +46,9 @@ def check_required_env_vars():
             f"  - CACHE_DIR: embedding缓存目录路径\n"
             f"\n"
             f"设置方法（Windows PowerShell）：\n"
-            f"  $env:EXCEL_PATH = 'C:\\Users\\liy167\\YuLI\\testcd_map\\SDTM Terminology.xls'\n"
-            f"  $env:MAPPING_FILE = 'C:\\Users\\liy167\\YuLI\\testcd_map\\TEST_TESTCD_mapping.xlsx'\n"
-            f"  $env:CACHE_DIR = 'C:\\Users\\liy167\\YuLI\\testcd_map\\testcd_embedding'\n"
+            f"  $env:EXCEL_PATH = 'data/SDTM Terminology.xls'\n"
+            f"  $env:MAPPING_FILE = 'data/TEST_TESTCD_mapping.xlsx'\n"
+            f"  $env:CACHE_DIR = 'cache/testcd_embedding'\n"
             f"\n"
             f"设置方法（Linux/Mac）：\n"
             f"  export EXCEL_PATH='/path/to/SDTM Terminology.xls'\n"
