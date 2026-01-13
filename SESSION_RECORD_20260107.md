@@ -117,8 +117,8 @@
 
 ### 16. 文件路径配置
 - **需求**：修改文件路径
-  - `TEST_TESTCD_mapping.xlsx`: `Z:\projects\utility\macros\09_metadata\`
-  - `SDTM Terminology.xls`: `Z:\projects\utility\metadata\`
+  - `TEST_TESTCD_mapping.xlsx`: `C:\Users\liy167\YuLI\testcd_map\`
+  - `SDTM Terminology.xls`: `C:\Users\liy167\YuLI\testcd_map\`
 - **实现**：
   - 修改`__init__`方法的默认路径参数
   - 使用原始字符串（`r"..."`）避免转义问题
@@ -202,8 +202,8 @@ testcd_map/
 
 ### 默认文件路径
 
-- **SDTM Terminology.xls**: `Z:\projects\utility\metadata\SDTM Terminology.xls`
-- **TEST_TESTCD_mapping.xlsx**: `Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx`
+- **SDTM Terminology.xls**: `C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls`
+- **TEST_TESTCD_mapping.xlsx**: `C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx`
 
 ### 默认参数
 

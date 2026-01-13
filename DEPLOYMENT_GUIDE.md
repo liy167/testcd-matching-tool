@@ -363,9 +363,9 @@ docker build -t testcd-matching-app .
 # 运行容器
 docker run -d \
   -p 8501:8501 \
-  -v Z:/projects/utility/metadata:/data \
-  -v Z:/projects/utility/macros/09_metadata:/mapping \
-  -v Z:/projects/utility/metadata/testcd_embedding:/cache \
+  -v C:/Users/liy167/YuLI/testcd_map:/data \
+  -v C:/Users/liy167/YuLI/testcd_map:/mapping \
+  -v C:/Users/liy167/YuLI/testcd_map/testcd_embedding:/cache \
   --name testcd-app \
   testcd-matching-app
 ```
@@ -383,9 +383,9 @@ services:
     ports:
       - "8501:8501"
     volumes:
-      - Z:/projects/utility/metadata:/data
-      - Z:/projects/utility/macros/09_metadata:/mapping
-      - Z:/projects/utility/metadata/testcd_embedding:/cache
+      - C:/Users/liy167/YuLI/testcd_map:/data
+      - C:/Users/liy167/YuLI/testcd_map:/mapping
+      - C:/Users/liy167/YuLI/testcd_map/testcd_embedding:/cache
     restart: unless-stopped
     environment:
       - PYTHONUNBUFFERED=1
@@ -411,9 +411,9 @@ docker-compose up -d
 import os
 
 # 从环境变量读取路径，如果没有则使用默认值
-EXCEL_PATH = os.getenv('EXCEL_PATH', r"Z:\projects\utility\metadata\SDTM Terminology.xls")
-MAPPING_FILE = os.getenv('MAPPING_FILE', r"Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx")
-CACHE_DIR = os.getenv('CACHE_DIR', r"Z:\projects\utility\metadata\testcd_embedding")
+EXCEL_PATH = os.getenv('EXCEL_PATH', r"C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls")
+MAPPING_FILE = os.getenv('MAPPING_FILE', r"C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx")
+CACHE_DIR = os.getenv('CACHE_DIR', r"C:\Users\liy167\YuLI\testcd_map\testcd_embedding")
 ```
 
 修改 `lab_test_matcher.py`：

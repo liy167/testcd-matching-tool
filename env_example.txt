@@ -3,11 +3,11 @@
 # 或者创建 .env 文件（如果使用python-dotenv）
 
 # SDTM Terminology.xls 文件路径
-EXCEL_PATH=Z:\projects\utility\metadata\SDTM Terminology.xls
+EXCEL_PATH=C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls
 
 # TEST_TESTCD_mapping.xlsx 文件路径
-MAPPING_FILE=Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx
+MAPPING_FILE=C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx
 
 # embedding缓存目录路径
-CACHE_DIR=Z:\projects\utility\metadata\testcd_embedding
+CACHE_DIR=C:\Users\liy167\YuLI\testcd_map\testcd_embedding
 

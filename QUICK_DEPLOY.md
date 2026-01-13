@@ -131,9 +131,9 @@ git push -u origin main
    
       ```toml
       [paths]
-      EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
-      MAPPING_FILE = "Z:/projects/utility/macros/09_metadata/TEST_TESTCD_mapping.xlsx"
-      CACHE_DIR = "Z:/projects/utility/metadata/testcd_embedding"
+      EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
+      MAPPING_FILE = "C:/Users/liy167/YuLI/testcd_map/TEST_TESTCD_mapping.xlsx"
+      CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
       ```
    
       **注意**：

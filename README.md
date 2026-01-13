@@ -33,8 +33,8 @@ pip install -r requirements.txt
 
 确保以下文件在指定路径存在：
 
-- **SDTM Terminology.xls**: `Z:\projects\utility\metadata\SDTM Terminology.xls`
-- **TEST_TESTCD_mapping.xlsx**: `Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx`
+- **SDTM Terminology.xls**: `C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls`
+- **TEST_TESTCD_mapping.xlsx**: `C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx`
 
 > 注意：如果文件在其他位置，可以在代码中修改路径或通过参数传入。
 
@@ -138,7 +138,7 @@ testcd_map/
 ├── requirements.txt              # Python依赖包列表
 ├── README.md                     # 本文件
 ├── SESSION_RECORD.md             # 开发会话记录
-├── testcd_embedding/             # Embedding缓存目录（位于Z:\projects\utility\metadata\，自动生成）
+├── testcd_embedding/             # Embedding缓存目录（位于C:\Users\liy167\YuLI\testcd_map\，自动生成）
 │   ├── embeddings_e_*.npy        # E列embeddings
 │   ├── embeddings_f_*.npy       # F列embeddings
 │   ├── embeddings_h_*.npy         # H列embeddings
@@ -159,13 +159,13 @@ testcd_map/
 
 ### 默认文件路径
 
-- **SDTM Terminology.xls**: `Z:\projects\utility\metadata\SDTM Terminology.xls`
-- **TEST_TESTCD_mapping.xlsx**: `Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx`
+- **SDTM Terminology.xls**: `C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls`
+- **TEST_TESTCD_mapping.xlsx**: `C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx`
 
 ### 默认参数
 
 - **模型名称**: `paraphrase-multilingual-MiniLM-L12-v2`
-- **缓存目录**: `Z:\projects\utility\metadata\testcd_embedding`
+- **缓存目录**: `C:\Users\liy167\YuLI\testcd_map\testcd_embedding`
 - **默认top_k**: 10（语义匹配时返回的结果数量）
 
 ### 自定义路径

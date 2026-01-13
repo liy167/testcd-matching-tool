@@ -15,17 +15,17 @@
 ### 方法1：PowerShell（临时设置，当前会话有效）
 
 ```powershell
-$env:EXCEL_PATH = "Z:\projects\utility\metadata\SDTM Terminology.xls"
-$env:MAPPING_FILE = "Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx"
-$env:CACHE_DIR = "Z:\projects\utility\metadata\testcd_embedding"
+$env:EXCEL_PATH = "C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls"
+$env:MAPPING_FILE = "C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx"
+$env:CACHE_DIR = "C:\Users\liy167\YuLI\testcd_map\testcd_embedding"
 ```
 
 ### 方法2：命令提示符（临时设置，当前会话有效）
 
 ```cmd
-set EXCEL_PATH=Z:\projects\utility\metadata\SDTM Terminology.xls
-set MAPPING_FILE=Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx
-set CACHE_DIR=Z:\projects\utility\metadata\testcd_embedding
+set EXCEL_PATH=C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls
+set MAPPING_FILE=C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx
+set CACHE_DIR=C:\Users\liy167\YuLI\testcd_map\testcd_embedding
 ```
 
 ### 方法3：系统环境变量（永久设置）
@@ -35,9 +35,9 @@ set CACHE_DIR=Z:\projects\utility\metadata\testcd_embedding
 3. 点击"环境变量"
 4. 在"用户变量"或"系统变量"中点击"新建"
 5. 添加以下变量：
-   - 变量名：`EXCEL_PATH`，变量值：`Z:\projects\utility\metadata\SDTM Terminology.xls`
-   - 变量名：`MAPPING_FILE`，变量值：`Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx`
-   - 变量名：`CACHE_DIR`，变量值：`Z:\projects\utility\metadata\testcd_embedding`
+   - 变量名：`EXCEL_PATH`，变量值：`C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls`
+   - 变量名：`MAPPING_FILE`，变量值：`C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx`
+   - 变量名：`CACHE_DIR`，变量值：`C:\Users\liy167\YuLI\testcd_map\testcd_embedding`
 6. 点击"确定"保存
 7. **重要**：需要重新打开命令行窗口或重启IDE才能生效
 
@@ -56,9 +56,9 @@ set CACHE_DIR=Z:\projects\utility\metadata\testcd_embedding
 
 2. **编辑 `.env` 文件**（已创建，位于项目根目录）：
    ```
-   EXCEL_PATH=Z:\projects\utility\metadata\SDTM Terminology.xls
-   MAPPING_FILE=Z:\projects\utility\macros\09_metadata\TEST_TESTCD_mapping.xlsx
-   CACHE_DIR=Z:\projects\utility\metadata\testcd_embedding
+   EXCEL_PATH=C:\Users\liy167\YuLI\testcd_map\SDTM Terminology.xls
+   MAPPING_FILE=C:\Users\liy167\YuLI\testcd_map\TEST_TESTCD_mapping.xlsx
+   CACHE_DIR=C:\Users\liy167\YuLI\testcd_map\testcd_embedding
    ```
    
    根据您的实际路径修改 `.env` 文件中的值。
@@ -133,9 +133,9 @@ source ~/.bashrc  # 或 source ~/.zshrc
 
 ```toml
 [paths]
-EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
-MAPPING_FILE = "Z:/projects/utility/macros/09_metadata/TEST_TESTCD_mapping.xlsx"
-CACHE_DIR = "Z:/projects/utility/metadata/testcd_embedding"
+EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
+MAPPING_FILE = "C:/Users/liy167/YuLI/testcd_map/TEST_TESTCD_mapping.xlsx"
+CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
 ```
 
 **注意**：Streamlit Cloud 使用 TOML 格式，路径使用正斜杠 `/`。

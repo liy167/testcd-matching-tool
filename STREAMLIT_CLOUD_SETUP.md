@@ -26,9 +26,9 @@
 
 ```toml
 [paths]
-EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
-MAPPING_FILE = "Z:/projects/utility/macros/09_metadata/TEST_TESTCD_mapping.xlsx"
-CACHE_DIR = "Z:/projects/utility/metadata/testcd_embedding"
+EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
+MAPPING_FILE = "C:/Users/liy167/YuLI/testcd_map/TEST_TESTCD_mapping.xlsx"
+CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
 ```
 
 **重要提示**：
@@ -95,7 +95,7 @@ CACHE_DIR = "cache/testcd_embedding"
 
 路径中的空格不需要特殊处理，直接使用引号括起来即可：
 ```toml
-EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
+EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
 ```
 
 ## 快速参考
@@ -104,9 +104,9 @@ EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
 
 ```toml
 [paths]
-EXCEL_PATH = "Z:/projects/utility/metadata/SDTM Terminology.xls"
-MAPPING_FILE = "Z:/projects/utility/macros/09_metadata/TEST_TESTCD_mapping.xlsx"
-CACHE_DIR = "Z:/projects/utility/metadata/testcd_embedding"
+EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
+MAPPING_FILE = "C:/Users/liy167/YuLI/testcd_map/TEST_TESTCD_mapping.xlsx"
+CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
 ```
 
 **修改路径后，记得点击"Save"保存！**
