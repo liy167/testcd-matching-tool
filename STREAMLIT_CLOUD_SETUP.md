@@ -26,15 +26,16 @@
 
 ```toml
 [paths]
-EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
-MAPPING_FILE = "C:/Users/liy167/YuLI/testcd_map/TEST_TESTCD_mapping.xlsx"
-CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
+EXCEL_PATH = "data/SDTM Terminology.xls"
+MAPPING_FILE = "data/TEST_TESTCD_mapping.xlsx"
+CACHE_DIR = "cache/testcd_embedding"
 ```
 
 **重要提示**：
 - ✅ 路径使用 **正斜杠** `/`（不是反斜杠 `\`）
 - ✅ 格式必须是TOML格式（使用 `[paths]` 作为节名）
 - ✅ 每个路径用引号括起来
+- ✅ 数据文件已上传到 GitHub 仓库的 `data/` 文件夹，使用相对路径
 
 ### 步骤4：保存并等待部署
 
@@ -51,21 +52,15 @@ CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
    - 路径格式是否正确（使用正斜杠）
    - 文件是否存在于指定路径
 
-## 如果文件在GitHub仓库中
+## 文件位置说明
 
-如果您的数据文件已经上传到GitHub仓库，可以使用相对路径：
+✅ **数据文件已上传到 GitHub 仓库**
 
-```toml
-[paths]
-EXCEL_PATH = "data/SDTM Terminology.xls"
-MAPPING_FILE = "data/TEST_TESTCD_mapping.xlsx"
-CACHE_DIR = "cache/testcd_embedding"
-```
+数据文件已包含在仓库的 `data/` 文件夹中：
+- `data/SDTM Terminology.xls`
+- `data/TEST_TESTCD_mapping.xlsx`
 
-**前提条件**：
-- 数据文件必须在GitHub仓库中
-- 路径相对于项目根目录
-- 确保文件已提交到仓库
+因此，在 Streamlit Cloud 的 Secrets 中应使用相对路径（如上所示）。
 
 ## 常见问题
 
@@ -95,7 +90,7 @@ CACHE_DIR = "cache/testcd_embedding"
 
 路径中的空格不需要特殊处理，直接使用引号括起来即可：
 ```toml
-EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
+EXCEL_PATH = "data/SDTM Terminology.xls"
 ```
 
 ## 快速参考
@@ -104,9 +99,9 @@ EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
 
 ```toml
 [paths]
-EXCEL_PATH = "C:/Users/liy167/YuLI/testcd_map/SDTM Terminology.xls"
-MAPPING_FILE = "C:/Users/liy167/YuLI/testcd_map/TEST_TESTCD_mapping.xlsx"
-CACHE_DIR = "C:/Users/liy167/YuLI/testcd_map/testcd_embedding"
+EXCEL_PATH = "data/SDTM Terminology.xls"
+MAPPING_FILE = "data/TEST_TESTCD_mapping.xlsx"
+CACHE_DIR = "cache/testcd_embedding"
 ```
 
 **修改路径后，记得点击"Save"保存！**
