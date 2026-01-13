@@ -58,3 +58,7 @@ archive/
 *.pptx
 *.ppt
 
+# Allow data folder files (needed for Streamlit Cloud deployment)
+!data/
+!data/*.xls
+!data/*.xlsx
